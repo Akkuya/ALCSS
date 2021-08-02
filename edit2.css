@@ -1,0 +1,56 @@
+/* Anilist CSS By Akkuya */
+
+@keyframes color {
+  0% {color: #ca74fc}
+  25% {color: #f174fc}
+  50% {color: #fc74a2}
+  100% {color: #fc747d}
+  
+}
+#nav {
+  height:50px;
+}
+
+
+.hohDownload {
+  display: none;
+}
+
+
+.name:after {
+  content: "cool person";
+  padding: 4px 5px;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  margin-bottom: 19px;
+  background-color: #d5d9b6;
+  border-radius: 7px;
+}
+
+.name {
+    animation: color 3s linear infinite alternate;
+
+}
+
+.content-wrap {
+  margin-top: 20px;
+}
+  
+.genre-overview {
+  display: none;
+}
+
+.section-header[data-v-aedb6876] {
+  display: none;
+}
+
+.banner {
+  filter: brightness(0.5);
+}
+.progress > .bar[data-v-815ccddc] {
+     background: linear-gradient(to right, gray 5%, whitesmoke 97%);
+}
+.history-day[data-v-b79eb0f0] {
+  background-color: rgba(141,178,219,.7);
+}
+
