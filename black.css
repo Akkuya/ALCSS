@@ -1,0 +1,181 @@
+/*
+  
+  Anilist CSS By Akkuya 
+
+  If you are going to use this, please give some credit.
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
+:root {
+ --font-family: 'Klee One', cursive;
+}
+
+#nav {
+  height: 50px;
+  background-color: rgba(35,38,67,.5);
+  color: #e5e7ea;
+}
+
+#nav:hover {
+  background-color: rgba(35,38,67,.5);
+  color: #e5e7ea;
+}
+#nav >.wrap>.links>.link:hover {
+  color: #b99dd4;
+}
+
+#nav >.wrap>.links>.browse-wrap>.link:hover {
+  color: #b99dd4;
+}
+#nav >.wrap>.logo {
+  transition: transform 1s cubic-bezier(.49,.14,.32,1.53);
+}
+#nav >.wrap>.logo:hover {
+  transform: rotate(360deg)
+             scale(120%);
+}
+.chevron {
+  display: none;
+}
+/* BANNER  */
+  .banner {
+    background: none !important;
+  }
+  .banner-content >.avatar {
+    margin-left: auto;
+  }
+
+  .banner-content >.name-wrapper>.name {
+    margin-left: -30px;
+    margin-bottom: -10px;
+    font-size: 100px;
+  }
+
+  .hohDownload {
+    display: none;
+  }
+
+/* NAVBAR */
+  .nav-wrap[data-v-2431f6d8] {
+    border-radius: 10px;
+    margin-bottom: -15px;
+    margin-top: 10px;
+    transform: translateX(20%);
+    width: 70%;
+    
+  }
+
+  .nav.container > .link {
+    color: #e5e7ea;
+  }
+
+  .nav.container > .link:hover {
+    color: #b99dd4;
+  }
+
+/* MAIN */
+
+.page-content {
+  background-color: black;
+}
+
+
+/* STATS */
+
+
+/* Height */
+.list-stats.content-wrap {
+  height: 63%;
+  transition: all 1s ease-in-out;
+}
+
+.list-stats.content-wrap:hover {
+  height: 100%;
+}
+
+
+
+
+/* Progress Bar */
+.list-stats.content-wrap >.footer >.progress >.bar {
+  background: linear-gradient(90deg, grey, white 100%);
+}
+
+/* ACTIVITY */
+.details[data-v-1bf2cf4e] {
+  background-color: #1c1c1c;
+  color: #b99dd4;
+  font-weight: bold;
+}
+
+.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/manga/"] { 
+  color: #e5e7ea !important;
+}
+
+.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/anime/"] { 
+  color: #e5e7ea !important;
+}
+.activity-entry>.wrap {
+  background-color: #1c1c1c;
+}
+
+
+.activity-text >.wrap>.text>.header>.avatar {
+  border: 1px black solid;
+  border-radius: 50%;
+  display: block;
+  transition: all 1.5s ease-in-out;
+}
+.activity-text >.wrap>.text>.header>.name {
+  color: white; 
+  font-family: 'Klee One', cursive;
+}
+
+.activity-text >.wrap>.text>.header>.name:hover {
+  transform: scale(120%);
+}
+
+.activity-message>.wrap>.text>.header>.name {
+  color: white; 
+  font-family: 'Klee One', cursive;
+}
+
+.activity-message>.wrap>.text>.header>.name:hover {
+  transform: scale(120%);
+}
+
+.activity-message>.wrap>.text>.header>.avatar {
+  border: 1px black solid;
+  border-radius: 50%;
+  display: block;
+  transition: all 1.5s ease-in-out;
+}
+.activity-message>.wrap>.text>.header>.avatar:hover {
+  transform: scale(120%)
+             rotate(360deg);
+  border-color: white;
+}
+
+.activity-text >.wrap>.text>.header>.avatar:hover {
+  transform: scale(120%)
+             rotate(360deg);
+  border-color: white;
+}
+
+/* FOOTER */
+.wrap[data-v-a5dce466] >.footer {
+  border-radius: 10px 10px 0px 0px;
+  background-color: #1c1c1c;
+  width: 95%;
+  transform: translateX(2.5%);
+}
+
+
+
+/* FAVOURITES */
+
+.favourite:hover {
+  transform: scale(110%);
+}
