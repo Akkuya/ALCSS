@@ -1,28 +1,24 @@
 /* 
     Cool Custom CSS for AniList
-    Version - 1.0.0
-
+    Version - 1.1.0
     Written by AKkuya.
     * anilist.co/user/Akkuya
     
-
     Licensed under the MIT license - http://opensource.org/licenses/MIT
     Copyright (c) 2021 2021.css
-
     ============================
-
     Main changes:
     * Navigation bar
     * Banner
     * Overview stats
     * Activity feed
     * Colors and UI
-
     ============================
 */
 
 
 @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
   --font-family: 'Klee One', cursive;
@@ -30,7 +26,44 @@
   --text-color: #e5e7ea;
   --text-hover-color: #b99dd4;
 }
-
+@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0) !important;
+		}
+		8%{
+			color: rgb(255,127,0) !important;
+		}
+		16%{
+			color: rgb(255,255,0) !important;
+		}
+		25%{
+			color: rgb(127,255,0) !important;
+		}
+		33%{
+			color: rgb(0,255,0) !important;
+		}
+		41%{
+			color: rgb(0,255,127)!important;
+		}
+		50%{
+			color: rgb(0,255,255) !important;
+		}
+		58%{
+			color: rgb(0,127,255) !important;
+		}
+		66%{
+			color: rgb(0,0,255) !important;
+		}
+		75%{
+			color: rgb(127,0,255) !important;
+		}
+		83%{
+			color: rgb(255,0,255) !important;
+		}
+		91%{
+			color: rgb(255,0,127) !important;
+  }
+  }
 
 /*===============================================
     AL Nav modifications
@@ -73,12 +106,17 @@
   }
   .banner-content >.avatar {
     margin-left: auto;
+    margin-bottom: -0.8em;
   }
 
   .banner-content >.name-wrapper>.name {
     margin-left: -30px;
     margin-bottom: -10px;
     font-size: 100px;
+    background: linear-gradient(135deg, #dfb1e3, #b677bd 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 
   .hohDownload {
@@ -86,11 +124,12 @@
   }
 
 
+
 /*===============================================
     Profile Nav modifications
 ===============================================*/
 
-.nav-wrap[data-v-2431f6d8] {
+.nav-wrap[data-v-1cc2919e] {
   border-radius: 10px;
   margin-bottom: -15px;
   margin-top: 10px;
@@ -116,27 +155,37 @@
   background-color: black;
 }
 
+a:hover {
+  color: var(--text-hover-color) !important;
+}
 
 /*===============================================
     Stats modifications
 ===============================================*/
 
 /* Height */
-.list-stats.content-wrap {
-  height: 63%;
-  transition: all 1s ease-in-out;
+
+.history-day[data-v-b79eb0f0], .lv-0, .lv-1, .lv-9 {
+  background: rgba(var(--color-blue-dim),.7);
 }
 
-.list-stats.content-wrap:hover {
-  height: 100%;
+.stats-wrap>.content-wrap>.footer {
+  display: none;
 }
-
 /* Progress Bar */
 .list-stats.content-wrap >.footer >.progress >.bar {
   background: linear-gradient(90deg, grey, white 100%);
 }
 
+.list-stats>.stats-wrap {
+  background: #5d4e5e !important;
+  
+  border: 4px grey solid;
+}
 
+.list-stats>.stats-wrap>.stat>.label, .stat>.value {
+  color: var(--text-hover-color) !important;
+}
 /*===============================================
     Activity modifications
 ===============================================*/
@@ -151,12 +200,79 @@
   color: #e5e7ea !important;
 }
 
+
+
 .activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/anime/"] { 
   color: #e5e7ea !important;
 }
+
+.time {
+  display: none;
+  
+}
+
+.activity-anime_list >.wrap,.activity-manga_list>.wrap {
+  height: 6em;
+  transition: all .5s ease-in-out;
+  
+}
+.activity-anime_list>.wrap:hover ,.activity-manga_list>.wrap:hover {
+  transform: scale(110%);
+}
+.activity-message >.wrap, .activity-text >.wrap {
+  height: 6em;
+  transition: all 1s ease-in-out; 
+}
+
+.activity-message >.wrap >.text>.header {
+  justify-content: center;
+}
+
+.activity-entry>.wrap>.text>.header>.private-badge {
+  display: none;
+}
+.activity-message >.wrap:hover, .activity-text >.wrap:hover {
+  height: max-content;
+}
+.activity-entry >.wrap >.text>.header {
+  justify-content: center;
+}
+
+.activity-manga_list:nth-child(1)>.wrap>.list>.details>.status>.title{
+  color: var(--text-hover-color) !important;
+}
+
+/* .activity-text {
+  transition: all 1s ease;
+}
+.activity-text >.wrap:hover {
+  height: max-content;
+}
+
+.activity-message >.wrap:hover {
+  height: max-content;
+}
+*/
+.activity-entry:hover .time {
+  display: block;
+} 
 .activity-entry>.wrap {
   background-color: var(--background-color);
 }
+.activity-entry>.wrap>.time:hover {
+  background: var(--main-background-color);
+}
+.activity-entry>.wrap>.time>.action {
+  display: none;
+}
+
+
+
+.activity-entry>.wrap>.list>.details>.entry-dropdown {
+  display: none;
+  background: transparent;
+}
+
 
 .activity-text >.wrap>.text>.header>.avatar {
   border: 1px black solid;
@@ -188,6 +304,7 @@
   display: block;
   transition: all 1.5s ease-in-out;
 }
+
 
 .activity-message>.wrap>.text>.header>.avatar:hover {
   transform: scale(120%)
@@ -221,3 +338,4 @@
 .favourite:hover {
   transform: scale(110%);
 }
+
