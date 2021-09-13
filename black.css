@@ -1,6 +1,6 @@
 /* 
     Cool Custom CSS for AniList
-    Version - 1.1.0
+    Version - 1.5.0
     Written by AKkuya.
     * anilist.co/user/Akkuya
     
@@ -21,49 +21,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --font-family: 'Klee One', cursive;
+  --activity-font-family: 'Klee One', cursive;
   --background-color: #1c1c1c;
   --text-color: #e5e7ea;
   --text-hover-color: #b99dd4;
 }
-@keyframes rainbow{
-		100%,0%{
-			color: rgb(255,0,0) !important;
-		}
-		8%{
-			color: rgb(255,127,0) !important;
-		}
-		16%{
-			color: rgb(255,255,0) !important;
-		}
-		25%{
-			color: rgb(127,255,0) !important;
-		}
-		33%{
-			color: rgb(0,255,0) !important;
-		}
-		41%{
-			color: rgb(0,255,127)!important;
-		}
-		50%{
-			color: rgb(0,255,255) !important;
-		}
-		58%{
-			color: rgb(0,127,255) !important;
-		}
-		66%{
-			color: rgb(0,0,255) !important;
-		}
-		75%{
-			color: rgb(127,0,255) !important;
-		}
-		83%{
-			color: rgb(255,0,255) !important;
-		}
-		91%{
-			color: rgb(255,0,127) !important;
-  }
-  }
+/*===============================================
+    HIDING THESE
+===============================================*/
+    .chevron,
+    .time,
+    .hohDownload,
+    .stats-wrap > .content-wrap > .footer,
+    .activity-entry > .wrap > .text > .header > .private-badge,
+    .activity-entry > .wrap > .time > .action,
+    .history-day 
+    {
+        display: none !important;
+    } 
+
+    .banner {
+        background: none !important;
+    }
 
 /*===============================================
     AL Nav modifications
@@ -79,31 +58,21 @@
   background-color: rgba(35,38,67,.5);
   color: var(--text-color);
 }
-#nav >.wrap>.links>.link:hover {
-  color: var(--text-color-hover);
-}
 
-#nav >.wrap>.links>.browse-wrap>.link:hover {
-  color: var(--text-color-hover);
-}
-#nav >.wrap>.logo {
+#nav > .wrap> .logo {
   transition: transform 1s cubic-bezier(.49,.14,.32,1.53);
 }
-#nav >.wrap>.logo:hover {
-  transform: rotate(360deg)
-             scale(120%);
+
+#nav > .wrap> .logo:hover {
+    transform: rotate(360deg)
+               scale(120%);
 }
-.chevron {
-  display: none;
-}
+
 
 
 /*===============================================
     Banner modifications
 ===============================================*/
-  .banner {
-    background: none !important;
-  }
   .banner-content >.avatar {
     margin-left: auto;
     margin-bottom: -0.8em;
@@ -119,12 +88,6 @@
     -webkit-background-clip: text;
   }
 
-  .hohDownload {
-    display: none;
-  }
-
-
-
 /*===============================================
     Profile Nav modifications
 ===============================================*/
@@ -133,7 +96,8 @@
   border-radius: 10px;
   margin-bottom: -15px;
   margin-top: 10px;
-  transform: translateX(20%);
+  margin-left: 50%;
+  transform: translateX(-50%);
   width: 70%;
   
 }
@@ -163,32 +127,32 @@ a:hover {
     Stats modifications
 ===============================================*/
 
-/* Height */
 
-.history-day[data-v-b79eb0f0], .lv-0, .lv-1, .lv-9 {
-  background: rgba(var(--color-blue-dim),.7);
-}
 
-.stats-wrap>.content-wrap>.footer {
-  display: none;
-}
-/* Progress Bar */
-.list-stats.content-wrap >.footer >.progress >.bar {
-  background: linear-gradient(90deg, grey, white 100%);
-}
 
-.list-stats>.stats-wrap {
+.list-stats {
+  background: black !important;
+}
+.list-stats > .stats-wrap {
   background: #5d4e5e !important;
-  
+  border-radius: 1em;
   border: 4px grey solid;
 }
 
-.list-stats>.stats-wrap>.stat>.label, .stat>.value {
+.list-stats > .stats-wrap > .stat > .label,
+.stat>.value {
   color: var(--text-hover-color) !important;
 }
 /*===============================================
     Activity modifications
 ===============================================*/
+.activity-feed-wrap {
+    background: rgb(60, 56, 54);
+    padding: 30px 20px;
+    border-radius: 1em;
+    border: 3px rgb(235, 219, 178) solid;
+    margin-bottom: 4em;
+}
 
 .details[data-v-1bf2cf4e] {
   background-color: var(--background-color);
@@ -196,109 +160,75 @@ a:hover {
   font-weight: bold;
 }
 
-.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/manga/"] { 
+.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/manga/"],
+.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/anime/"]
+{ 
   color: #e5e7ea !important;
 }
 
 
-
-.activity-manga_list > div > div > div > div > .title, .hohPinned .list .title[href^="/anime/"] { 
-  color: #e5e7ea !important;
-}
-
-.time {
-  display: none;
-  
-}
-
-.activity-anime_list >.wrap,.activity-manga_list>.wrap {
+.activity-anime_list > .wrap, 
+.activity-manga_list > .wrap {
   height: 6em;
-  transition: all .5s ease-in-out;
-  
+  transition: all .4s ease-in-out;
 }
-.activity-anime_list>.wrap:hover ,.activity-manga_list>.wrap:hover {
-  transform: scale(110%);
+
+.activity-anime_list > .wrap:hover,
+.activity-manga_list > .wrap:hover {
+  transform: scale(105%);
 }
-.activity-message >.wrap, .activity-text >.wrap {
-  height: 6em;
+
+.activity-message > .wrap,
+.activity-text > .wrap {
+  height: 5.5em;
   transition: all 1s ease-in-out; 
 }
 
-.activity-message >.wrap >.text>.header {
-  justify-content: center;
+.activity-message > .wrap:hover,
+.activity-text >.wrap:hover {
+    height: 100%;
+    transform: scale(102%);
 }
 
-.activity-entry>.wrap>.text>.header>.private-badge {
-  display: none;
-}
-.activity-message >.wrap:hover, .activity-text >.wrap:hover {
-  height: max-content;
-}
-.activity-entry >.wrap >.text>.header {
+.activity-entry > .wrap > .text > .header {
   justify-content: center;
+  margin-top: -.2em;
 }
 
-.activity-manga_list:nth-child(1)>.wrap>.list>.details>.status>.title{
+.activity-manga_list:nth-child(1) > .wrap > .list > .details > .status > .title {
   color: var(--text-hover-color) !important;
 }
 
-/* .activity-text {
-  transition: all 1s ease;
-}
-.activity-text >.wrap:hover {
-  height: max-content;
+.activity-entry:hover .time {
+  display: block !important;
 }
 
-.activity-message >.wrap:hover {
-  height: max-content;
-}
-*/
-.activity-entry:hover .time {
-  display: block;
-} 
 .activity-entry>.wrap {
   background-color: var(--background-color);
 }
+
 .activity-entry>.wrap>.time:hover {
   background: var(--main-background-color);
 }
-.activity-entry>.wrap>.time>.action {
-  display: none;
-}
 
-
-
-.activity-entry>.wrap>.list>.details>.entry-dropdown {
+.activity-entry > .wrap > .list > .details >.entry-dropdown {
   display: none;
   background: transparent;
 }
 
-
-.activity-text >.wrap>.text>.header>.avatar {
-  border: 1px black solid;
-  border-radius: 50%;
-  display: block;
-  transition: all 1.5s ease-in-out;
-}
-.activity-text >.wrap>.text>.header>.name {
-  color: white; 
-  font-family: var(--font-family)
-}
-
-.activity-text >.wrap>.text>.header>.name:hover {
-  transform: scale(120%);
-}
-
+.activity-text >.wrap>.text>.header>.name,
 .activity-message>.wrap>.text>.header>.name {
   color: white; 
   font-family: var(--font-family)
 }
 
+.activity-text >.wrap>.text>.header>.name:hover,
 .activity-message>.wrap>.text>.header>.name:hover {
   transform: scale(120%);
 }
 
-.activity-message>.wrap>.text>.header>.avatar {
+.activity-message > .wrap > .text > .header > .avatar,
+.activity-text > .wrap > .text > .header > .avatar {
   border: 1px black solid;
   border-radius: 50%;
   display: block;
@@ -306,36 +236,68 @@ a:hover {
 }
 
 
-.activity-message>.wrap>.text>.header>.avatar:hover {
-  transform: scale(120%)
-             rotate(360deg);
-  border-color: white;
-}
-
+.activity-message>.wrap>.text>.header>.avatar:hover,
 .activity-text >.wrap>.text>.header>.avatar:hover {
   transform: scale(120%)
              rotate(360deg);
   border-color: white;
 }
 
-
+.activity-edit > .el-textarea > .el-textarea__inner,
+.activity-edit > .el-textarea, 
+.activity-edit > .markdown-editor,
+.activity-edit > .actions > .button {
+  background-color: var(--background-color);
+}
 /*===============================================
     Footer modifications
 ===============================================*/
 
 .wrap[data-v-a5dce466] >.footer {
+  margin: 0;
   border-radius: 10px 10px 0px 0px;
   background-color: var(--background-color);
   width: 95%;
   transform: translateX(2.5%);
 }
 
+.wrap[data-v-a5dce466] {
+  margin: 0;
+  background: black;
+  margin-bottom: -2em;
+}
+
+
+
+.section-header[data-v-b79eb0f0] {
+  font-size: 0;
+  display: flex !important; 
+}
+
+.section-header[data-v-b79eb0f0]:after {
+  content: 'Discord';
+  font-size: 2rem;
+  font-family: Poppins;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-hover-color);
+
+}
+.activity-history[data-v-b79eb0f0] {
+  background-image: url(https://discord.c99.nl/widget/theme-2/737377683687735347.png) !important;
+  background-size: 100% !important;
+  height: 95px ;
+  background-repeat: no-repeat !important;
+}
+
 
 /*===============================================
     Favourites modifications
 ===============================================*/
-
+.section-header[data-v-aedb6876], 
+.genre-overview[data-v-aedb6876] {
+  display: none;
+}
 .favourite:hover {
   transform: scale(110%);
 }
-
